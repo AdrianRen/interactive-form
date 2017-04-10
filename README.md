@@ -2,9 +2,9 @@
 
 ## Project Requirements:
 
--   [ ] Set focus on the first text field:  
+-   [x] Set focus on the first text field:  
     -   When the page load, give focus to the first field
--   [ ] "Job Role" section of the form:  
+-   [x] "Job Role" section of the form:  
     -   A text field that will be revealed when the "Other" option is selected from the "Job Role" drop down menu.  
     -   Give the field an id of “other-title,” and add the placeholder text of "Your Job Role" to the field.  
 -   [ ] "T-Shirt Info" section of the form:

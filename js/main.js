@@ -11,3 +11,9 @@ $('#title').change(function() {
     $('#other-title').hide();
   }
 });
+// find the element which it's id is design
+$('#design').on('change', function() {
+    let themeOption = $('#design').find('option:selected').attr('value');
+    console.log(themeOption);
+
+});

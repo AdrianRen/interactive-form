@@ -1,6 +1,6 @@
 /**
 **************************************************************************
-    1st Requirement
+    1st Requirement: Focus on the first field, Job Role Section
 **************************************************************************
 **/
 // Hide the input element
@@ -16,7 +16,7 @@ $('#title').change(function() {
 });
 /**
 **************************************************************************
-    2nd Requirement
+    2nd Requirement: T-Shirt Section
 **************************************************************************
 **/
 // create a new object array called optArray by translate all options from #color
@@ -42,7 +42,7 @@ $('#design').change(function() {
         // create a new array called addOptArray to store matched options based on previous option on design list
         let addOptArray = [];
         for (var i = 0; i < optArray.length; i++) {
-            // find option's value starts with the current option's value from optArray
+            // find option's value contains the current option's value from optArray
             if (optArray[i].value.indexOf($(this).val()) > -1) {
                 // add to addOptArray
                 addOptArray.push(optArray[i].option);
@@ -54,6 +54,6 @@ $('#design').change(function() {
 });
 /**
 **************************************************************************
-    3rd Requirement
+    3rd Requirement: Activity Registration
 **************************************************************************
 **/

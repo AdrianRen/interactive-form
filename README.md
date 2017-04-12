@@ -7,7 +7,7 @@
 -   [x] "Job Role" section of the form:  
     -   A text field that will be revealed when the "Other" option is selected from the "Job Role" drop down menu.  
     -   Give the field an id of “other-title,” and add the placeholder text of "Your Job Role" to the field.  
--   [ ] "T-Shirt Info" section of the form:
+-   [x] "T-Shirt Info" section of the form:
     -   For the T-Shirt color menu, only display the color options that match the design selected in the "Design" menu.
     -   If the user selects "Theme - JS Puns" then the color menu should only display "Cornflower Blue," "Dark Slate Grey," and "Gold."
     -   If the user selects "Theme - I ♥ JS" then the color menu should only display "Tomato," "Steel Blue," and "Dim Grey."

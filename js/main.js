@@ -1,6 +1,12 @@
 /**
 **************************************************************************
-    1st Requirement: Focus on the first field, Job Role Section
+    1st Requirement: Focus on the first field
+**************************************************************************
+**/
+$('#name').focus();
+/**
+**************************************************************************
+    2nd Requirement: Job Role Section
 **************************************************************************
 **/
 // Hide the input element
@@ -16,7 +22,9 @@ $('#title').change(function() {
 });
 /**
 **************************************************************************
-    2nd Requirement: T-Shirt Section
+    3rd Requirement: T-Shirt Section
+    AND
+    1st Extra Credit: Hide the "color" label
 **************************************************************************
 **/
 // create a new object array called optArray by translate all options from #color
@@ -55,5 +63,37 @@ $('#design').change(function() {
 /**
 **************************************************************************
     3rd Requirement: Activity Registration
+**************************************************************************
+**/
+/**
+**************************************************************************
+    4th Requirement: Displaying payment sections
+**************************************************************************
+**/
+$('#paypal, #bitcoin').hide();
+$('#payment').change(function() {
+    let paymentMethod = $(this).val();
+    if (paymentMethod == "credit card") {
+      $('#paypal, #bitcoin').hide();
+      $('#credit-card').show();
+    } else if (paymentMethod == "select_method") {
+      $('#paypal, #bitcoin').hide();
+      $('#credit-card').show();
+    } else if (paymentMethod == "paypal") {
+      $('#credit-card, #bitcoin').hide();
+      $('#paypal').show();
+    } else {
+      $('#credit-card, #paypal').hide();
+      $('#bitcoin').show();
+    }
+});
+/**
+**************************************************************************
+    5th Requirement: Form Validation
+**************************************************************************
+**/
+/**
+**************************************************************************
+    6th Requirement: Form Validation Messages
 **************************************************************************
 **/

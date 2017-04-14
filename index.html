@@ -23,7 +23,7 @@
                 <legend>Basic Info</legend>
 
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="user_name" autofocus>
+                <input type="text" id="name" name="user_name">
 
                 <label for="mail">Email:</label>
                 <input type="email" id="mail" name="user_email">
@@ -37,6 +37,7 @@
                   <option value="student">Student</option>
                   <option value="other">Other</option>
                 </select>
+                <label for="other-title" class=""></label>
                 <input type="text" id="other-title" name="" value="" placeholder="Your Job Role">
             </fieldset>
 
@@ -85,7 +86,7 @@
                 <label><input type="checkbox" name="node"> Node.js Workshop — Tuesday 1pm-4pm, $100</label>
                 <label><input type="checkbox" name="build-tools"> Build tools Workshop — Wednesday 9am-12pm, $100</label>
                 <label><input type="checkbox" name="npm"> npm Workshop — Wednesday 1pm-4pm, $100</label>
-                
+
             </fieldset>
             <fieldset>
                 <legend>Payment Info</legend>
@@ -140,11 +141,11 @@
                     </select>
                 </div>
 
-                <div>
+                <div id="paypal" class="paypal">
                     <p>If you selected the PayPal option we'll take you to Paypal's site to set up your billing information, when you click “Register” below.</p>
                 </div>
 
-                <div>
+                <div id="bitcoin" class="bitcoin">
                     <p>If you selected the Bitcoin option we'll take you to the Coinbase site to set up your billing information. Due to the nature of exchanging Bitcoin, all Bitcoin transactions will be final.</p>
                 </div>
 

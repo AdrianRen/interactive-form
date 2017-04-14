@@ -15,7 +15,7 @@
     -   Some events are at the same time as others. If the user selects a workshop, don't allow selection of a workshop at the same date and time -- you should disable the checkbox and visually indicate that the workshop in the competing time slot isn't available.
     -   When a user unchecks an activity, make sure that competing activities (if there are any) are no longer disabled.
     -   As a user selects activities, a running total should display below the list of checkboxes. For example, if the user selects "Main Conference", then Total: $200 should appear. If they add 1 workshop, the total should change to Total: $300.
--   [ ] Payment Info section of the form:
+-   [x] Payment Info section of the form:
     -   Display payment sections based on the payment option chosen in the select menu
     -   The "Credit Card" payment option should be selected by default, display the #credit-card div, and hide the "Paypal" and "Bitcoin information.
     -   When a user selects the "PayPal" payment option, the Paypal information should display, and the credit card and “Bitcoin” information should be hidden.

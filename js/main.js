@@ -71,6 +71,7 @@ $('#design').change(function() {
 **************************************************************************
 **/
 $('#paypal, #bitcoin').hide();
+$('#payment').val('credit card');
 $('#payment').change(function() {
     let paymentMethod = $(this).val();
     if (paymentMethod == "credit card") {

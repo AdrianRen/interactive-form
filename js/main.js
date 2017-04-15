@@ -65,6 +65,29 @@ $('#design').change(function() {
     3rd Requirement: Activity Registration
 **************************************************************************
 **/
+let totalCost = 0;
+// append totol cost to .activities
+$('.activities').append('<div>Total: $<span class="totalCost">0</span></div>')
+$('.activities input[type="checkbox"]').each(function() {
+    $(this).change(function() {
+        let activity = $(this).attr("name");
+        let timeSlot = $(this).attr("data-timeslot");
+        let activityCost = parseInt($(this).attr("data-cost"));
+        let activityTimeslot = $('input[data-timeslot="' +timeSlot+ '"]');
+        let conflictActivityTimeslot = activityTimeslot.not(':checked');
+
+        if($(this).is(":checked")){
+          conflictActivityTimeslot.prop('disabled', true);
+          conflictActivityTimeslot.parent().css('text-decoration','line-through');
+          totalCost += activityCost;
+        } else {
+          conflictActivityTimeslot.prop("disabled", false);
+          conflictActivityTimeslot.parent().css('text-decoration','none');
+          totalCost -= activityCost
+        }
+        $('.totalCost').text(totalCost);
+    });
+});
 /**
 **************************************************************************
     4th Requirement: Displaying payment sections
@@ -93,6 +116,7 @@ $('#payment').change(function() {
     5th Requirement: Form Validation
 **************************************************************************
 **/
+
 /**
 **************************************************************************
     6th Requirement: Form Validation Messages

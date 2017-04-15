@@ -7,6 +7,7 @@
     <title>Register for Full Stack Conf</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -81,14 +82,13 @@
 
             <fieldset class="activities">
                 <legend>Register for Activities</legend>
-                <label><input type="checkbox" name="all"> Main Conference — $200</label>
-                <label><input type="checkbox" name="js-frameworks"> JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100</label>
-                <label><input type="checkbox" name="js-libs"> JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100</label>
-                <label><input type="checkbox" name="express"> Express Workshop — Tuesday 9am-12pm, $100</label>
-                <label><input type="checkbox" name="node"> Node.js Workshop — Tuesday 1pm-4pm, $100</label>
-                <label><input type="checkbox" name="build-tools"> Build tools Workshop — Wednesday 9am-12pm, $100</label>
-                <label><input type="checkbox" name="npm"> npm Workshop — Wednesday 1pm-4pm, $100</label>
-
+                <label><input type="checkbox" name="all" data-cost="200" data-timeslot="00"> Main Conference — $200</label>
+                <label><input type="checkbox" name="js-frameworks" data-cost="100" data-timeslot="01"> JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100</label>
+                <label><input type="checkbox" name="js-libs" data-cost="100" data-timeslot="02"> JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100</label>
+                <label><input type="checkbox" name="express" data-cost="100" data-timeslot="01"> Express Workshop — Tuesday 9am-12pm, $100</label>
+                <label><input type="checkbox" name="node" data-cost="100" data-timeslot="02"> Node.js Workshop — Tuesday 1pm-4pm, $100</label>
+                <label><input type="checkbox" name="build-tools" data-cost="100" data-timeslot="03"> Build tools Workshop — Wednesday 9am-12pm, $100</label>
+                <label><input type="checkbox" name="npm" data-cost="100" data-timeslot="04"> npm Workshop — Wednesday 1pm-4pm, $100</label>
             </fieldset>
             <fieldset>
                 <legend>Payment Info</legend>
@@ -158,7 +158,6 @@
         </form>
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="js/main.js" charset="utf-8"></script>
 </body>
 

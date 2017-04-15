@@ -188,3 +188,10 @@ button:hover {
 .warningBorder {
   border: 3px solid red;
 }
+
+.emsg{
+    color: red;
+}
+.hidden {
+     visibility:hidden;
+}

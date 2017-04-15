@@ -24,6 +24,7 @@
                 <legend>Basic Info</legend>
 
                 <label id="nameLabel" for="name">Name:</label>
+                <span class="emsg hidden">Please Enter a Valid Name</span>
                 <input type="text" id="name" name="user_name">
 
                 <label id="mailLabel" for="mail">Email:</label>
@@ -104,17 +105,17 @@
                 <div id="credit-card" class="credit-card">
 
                     <div class="col-6 col">
-                        <label for="cc-num">Card Number:</label>
+                        <label id="ccLabel" for="cc-num">Card Number:</label>
                         <input id="cc-num" name="user_cc-num" type="text">
                     </div>
 
                     <div class="col-3 col">
-                        <label for="zip">Zip Code:</label>
+                        <label id="zipLabel" for="zip">Zip Code:</label>
                         <input id="zip" name="user_zip" type="text">
                     </div>
 
                     <div class="col-3 col">
-                        <label for="cvv">CVV:</label>
+                        <label id="cvvLabel" for="cvv">CVV:</label>
                         <input id="cvv" name="user_cvv" type="text">
                     </div>
 

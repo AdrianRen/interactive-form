@@ -116,7 +116,9 @@ $('#payment').change(function() {
     5th Requirement: Form Validation
 **************************************************************************
 **/
-
+const nameValidation = () =>{
+  let has
+}
 /**
 **************************************************************************
     6th Requirement: Form Validation Messages

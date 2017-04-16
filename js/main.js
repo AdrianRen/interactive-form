@@ -24,7 +24,7 @@ $('#title').change(function() {
 **************************************************************************
     3rd Requirement: T-Shirt Section
     AND
-    1st Extra Credit: Hide the "color" label
+    1st Extra Requirement: Hide the "color" label
 **************************************************************************
 **/
 // create a new object array called optArray by translate all options from #color
@@ -70,12 +70,14 @@ let totalCost = 0;
 $('.activities').append('<div>Total: $<span class="totalCost">0</span></div>')
 $('.activities input[type="checkbox"]').each(function() {
     $(this).change(function() {
+        // variables will be used in this function
+        // some HTML has been modified
         let activity = $(this).attr("name");
         let timeSlot = $(this).attr("data-timeslot");
         let activityCost = parseInt($(this).attr("data-cost"));
         let activityTimeslot = $('input[data-timeslot="' + timeSlot + '"]');
         let conflictActivityTimeslot = activityTimeslot.not(':checked');
-
+        // if the the activity checked, another activity at the same time will be disabled
         if ($(this).is(":checked")) {
             conflictActivityTimeslot.prop('disabled', true);
             conflictActivityTimeslot.parent().css('text-decoration', 'line-through');
@@ -85,6 +87,7 @@ $('.activities input[type="checkbox"]').each(function() {
             conflictActivityTimeslot.parent().css('text-decoration', 'none');
             totalCost -= activityCost
         }
+        // add total cost to DOM
         $('.totalCost').text(totalCost);
     });
 });
@@ -116,9 +119,10 @@ $('#payment').change(function() {
     5th Requirement: Form Validation
 **************************************************************************
 **/
+// All validation will use regular expression to verify the content
 const nameValidation = () => {
     let nameValue = $('#name').val();
-    let regexpName=/^([a-zA-Z]{3,16})$/;
+    let regexpName = /^([a-zA-Z]{3,16})$/;
     return (regexpName.test(nameValue));
 }
 
@@ -157,9 +161,10 @@ const activityValidation = () => {
 
 /**
 **************************************************************************
-    3rd Exceed Requirement: real-time validation error message
+    3rd Extra Requirement: real-time validation error message
 **************************************************************************
 **/
+// real time msg will be shown when keyboard actived.
 let $regexpName = /^([a-zA-Z]{3,16})$/;
 $('#name').append('<span class="emsg hidden">Please Enter a Valid Name</span>')
 $('#name').on('keypress keydown keyup', function() {
@@ -178,45 +183,53 @@ $('#name').on('keypress keydown keyup', function() {
     6th Requirement: Form Validation Messages
 **************************************************************************
 **/
-let erros = 0;
+let errors = 0;
 $(document).on('submit', 'form', function(e) {
-    erros = 0;
+    // count the error msg
+    errors = 0;
+    // Remove all the warnings initially
     $('.warning').remove();
     if (!(nameValidation())) {
         $('#nameLabel').append('<span class="warning"> Enter a name.</span>');
-        erros++;
+        errors++;
     }
     if (!(emailValidation())) {
         $('#mailLabel').append('<span class="warning"> Enter a valid email address.</span>');
-        erros++;
+        errors++;
     }
     if (!(activityValidation())) {
         $('.activities legend').append('<span class="warning"> You need to choose at least one activity.</span>');
-        erros++;
+        errors++;
     }
     if ($('#payment').val() === 'credit card') {
         if (!(creditCardValidation())) {
-          if ($('#cc-num').val().length<=0) {
-            $('#ccLabel').append('<span class="warning"> Can\'t be empty.</span>');
-            erros++;
-          } else {
-            $('#ccLabel').append('<span class="warning"> Enter a Valid Credit Card.</span>');
-            erros++;
-          }
+            /**
+            **************************************************************************
+                2nd Extra Requirement: Error info depengs on error
+            **************************************************************************
+            **/
+            if ($('#cc-num').val().length <= 0) {
+                $('#ccLabel').append('<span class="warning"> Can\'t be empty.</span>');
+                errors++;
+            } else {
+                $('#ccLabel').append('<span class="warning"> Enter a Valid Credit Card.</span>');
+                errors++;
+            }
         }
         if (!(zipcodeValidation())) {
             $('#zipLabel').append('<span class="warning"> Required!</span>');
-            erros++;
+            errors++;
         }
         if (!(cvvValidation())) {
             $('#cvvLabel').append('<span class="warning"> Required!</span>');
-            erros++;
+            errors++;
         }
     }
-    console.log(erros);
-    if(erros==0){
-      alert('Successfully registered!')
+    // From can be submitted, if there is no errors
+    // otherwise, it will be prevented.
+    if (errors == 0) {
+        alert('Successfully registered!')
     } else {
-      e.preventDefault();
+        e.preventDefault();
     }
 })

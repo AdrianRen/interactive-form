@@ -166,7 +166,7 @@ const activityValidation = () => {
 **/
 // real time msg will be shown when keyboard actived.
 let $regexpName = /^([a-zA-Z]{3,16})$/;
-$('#name').append('<span class="emsg hidden">Please Enter a Valid Name</span>')
+$('#nameLabel').append('<span class="emsg hidden"> Please Enter a Valid Name</span>');
 $('#name').on('keypress keydown keyup', function() {
     if (!$(this).val().match($regexpName)) {
         // there is a mismatch, hence show the error message
@@ -190,7 +190,7 @@ $(document).on('submit', 'form', function(e) {
     // Remove all the warnings initially
     $('.warning').remove();
     if (!(nameValidation())) {
-        $('#nameLabel').append('<span class="warning"> Enter a name.</span>');
+        $('#nameLabel').append('<p class="warning"> Enter a name.</p>');
         errors++;
     }
     if (!(emailValidation())) {
